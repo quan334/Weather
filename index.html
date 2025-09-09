@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-md">
+        <div class="bg-gray-800 rounded-lg shadow-xl p-6">
+            <h1 class="text-2xl font-bold mb-6 text-center">Weather App</h1>
+            
+            <div class="search-box mb-6">
+                <div class="relative">
+                    <input type="text" 
+                           id="cityInput"
+                           placeholder="Enter city name..." 
+                           class="w-full bg-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                    <button id="searchBtn" 
+                            class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-500 text-white px-4 py-1 rounded-md hover:bg-purple-600 transition">
+                        Search
+                    </button>
+                </div>
+            </div>
+
+            <div id="weatherInfo" class="hidden">
+                <div class="text-center mb-6">
+                    <h2 id="cityName" class="text-2xl font-bold mb-2">City Name</h2>
+                    <div class="flex justify-center items-center gap-4 mb-2">
+                        <div id="temperature" class="text-4xl font-bold">25°C</div>
+                        <div class="text-gray-400">
+                            <div id="feelsLike">Feels like: 26°C</div>
+                            <div id="tempMinMax">Min: 20°C | Max: 28°C</div>
+                        </div>
+                    </div>
+                    <div id="weatherDescription" class="text-gray-400 capitalize">Clear Sky</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Humidity</div>
+                        <div id="humidity" class="text-xl font-bold">45%</div>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Wind Speed</div>
+                        <div id="windSpeed" class="text-xl font-bold">5.2 km/h</div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Pressure</div>
+                        <div id="pressure" class="text-xl font-bold">1013 hPa</div>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Clouds</div>
+                        <div id="clouds" class="text-xl font-bold">20%</div>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Sunrise</div>
+                        <div id="sunrise" class="text-xl font-bold">06:00</div>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg">
+                        <div class="text-gray-400 mb-1">Sunset</div>
+                        <div id="sunset" class="text-xl font-bold">18:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="errorMessage" class="hidden text-red-500 text-center mt-4"></div>
+        </div>
+    </div>
+</body>
+<script src="config.js"></script>
+<script src="script.js"></script>
+</html>
